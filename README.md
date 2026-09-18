@@ -10,6 +10,8 @@ The primary goal is to establish an encrypted tunnel using IKEv1 (Phase 1 & Phas
 * Branch B (Blue Zone): LAN 192.168.20.0/24 | WAN Interface IP 10.0.0.2/30
 * WAN / Internet Core: Simulated ISP WAN connectivity.
 ---
+![topology](./topology.png)
+
 ## 🔐 Cryptographic & Security Specifications
 
 | Parameter | Configuration / Algorithm |
@@ -20,6 +22,8 @@ The primary goal is to establish an encrypted tunnel using IKEv1 (Phase 1 & Phas
 | Diffie-Hellman Group | Group 2 (1024-bit) |
 | Phase 2 Transform-Set | ESP-AES + ESP-SHA-HMAC |
 | Encapsulation Mode | Tunnel Mode |
+
+
 
 ---
 ## ⚙️ Configuration Summary
@@ -47,6 +51,9 @@ interface FastEthernet0/1
  ## 🧪 Verification & Operational Proof
  
 ​To initiate traffic and trigger the Security Association (SA), ICMP packets were generated from VPC2 (192.168.10.x) targeting VPC8 (192.168.20.x).
+
+![test](./test.png)
+
 ​IPsec Security Association Output:
 ​Running show crypto ipsec sa confirms the active status of the encrypted tunnel:
 ​
